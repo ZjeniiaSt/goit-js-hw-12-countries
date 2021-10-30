@@ -4,16 +4,7 @@ import countryMarkup from '../templates/counrty_markup.hbs';
 import listMarkup from '../templates/list_markup.hbs';
 import debounce from 'lodash.debounce';
 import '@pnotify/core/dist/BrightTheme.css';
-import { alert, Stack } from '@pnotify/core';
-
-const myStack = new Stack({
-  dir1: 'up',
-});
-
-alert({
-  text: "I'm a notice centered at the bottom!",
-  stack: myStack,
-});
+import { error } from '@pnotify/core';
 
 const refs = getRefs();
 
@@ -35,12 +26,8 @@ function renderCountry(country) {
     refs.cardContainer.innerHTML = listMarkup(country);
   } else if (countryList > 10) {
     console.log('дописати');
-    const myStack = new Stack({
-      dir1: 'down',
-    });
-    alert({
+    error({
       text: 'Give me more letters and I will find the country',
-      stack: myStack,
     });
   }
 }

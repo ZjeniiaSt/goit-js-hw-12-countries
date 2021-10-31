@@ -27,7 +27,11 @@ function renderCountry(country) {
   } else if (countryList > 10) {
     console.log('дописати');
     error({
+      title: false,
       text: 'Give me more letters and I will find the country',
+      shadow: true,
+      sticker: false,
+      delay: 3000,
     });
   }
 }
